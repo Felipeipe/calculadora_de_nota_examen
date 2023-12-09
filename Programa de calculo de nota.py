@@ -8,12 +8,10 @@ print("Cuentame tus notas de los controles (para ver si salvas o no) \n")
 i=1
 Controles=[]
 c=1
-while True:
-    c=input("a ver tu nota del c" + str(i) + "\n")
-
-    if c=="basta":
-        break
-    Controles.append(float(c))
+print("si tiraste workflow en algún control, debes escribir 'wf' en el control en donde lo tiraste \n")
+while c!="basta":
+    c=input("a ver tu nota del c" + str(i) + " (escribe 'basta' para continuar) "+"\n")
+    Controles.append(c)
     i+=1
 
 a=input("te quieres ir a segunda? (s/n)")
