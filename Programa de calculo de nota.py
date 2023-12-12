@@ -8,6 +8,7 @@ print("Cuentame tus notas de los controles (para ver si salvas o no) \n")
 i=1
 Controles=[]
 c=1
+PC=float(input("cuanto porcentaje vale los controles que estás dando? \n"))/100
 print("si tiraste workflow en algún control, debes escribir 'wf' en el control en donde lo tiraste \n")
 while True:
     c=input("a ver tu nota del c" + str(i) + " (escribe 'basta' para continuar) "+"\n")
@@ -23,7 +24,7 @@ if a=="s":
 else:
     a=False
 
-NE=calc.calculadora(Controles,a)
+NE=calc.calculadora(Controles,PC,a)
 
 if a:
     print("necesitas un " + str(NE) + "para pasar al examen de segunda")

@@ -1,7 +1,7 @@
 def promedio(Controles):
     return sum(Controles)/len(Controles)
 
-def calculadora(Controles,Segunda=False):
+def calculadora(Controles,PC,Segunda=False):
     """
     Calcula la nota necesaria en el examen para pasar los ramos
     """
@@ -15,8 +15,8 @@ def calculadora(Controles,Segunda=False):
     if n == 0:
         raise ZeroDivisionError
 
-    PC=n/(n+2)
     PE=1-PC
+    
     while i<n:
         j=0
         if Controles[i]=="wf":
@@ -29,6 +29,7 @@ def calculadora(Controles,Segunda=False):
         else:
             Controles[i]=float(Controles[i])
         i+=1
+    
     prom=promedio(Controles)
     NE=(NF-PC*prom)/PE
     return NE
