@@ -1,7 +1,10 @@
-def promedio(Controles):
+def promedio(Controles:list[float])->float:
+    """
+    Calcula el promedio de una lista, la cual contiene objetos de tipo 'int' o 'float'
+    """
     return sum(Controles)/len(Controles)
 
-def calculadora(Controles:list,PC:float,Segunda:bool=False):
+def calculadora(Controles:list,PC:float,Segunda:bool=False)->float:
     """
     Calcula la nota necesaria en el examen para pasar los ramos
     """
@@ -10,18 +13,16 @@ def calculadora(Controles:list,PC:float,Segunda:bool=False):
         NF=3.65
     else:
         NF=3.95
-    
-    n=len(Controles)
-    if n == 0:
-        raise ZeroDivisionError
 
     PE=1-PC
-    
-    while i<n:
+
+    n=len(Controles)
+
+    for nota in Controles:
         j=0
-        if Controles[i]=="wf":
-            Controles.pop(i)
-            while j<len(Controles):
+        if nota=="wf":
+            Controles.remove(nota)
+            while j<n:
                 Controles[j]=float(Controles[j])
                 j+=1
             NE=(NF-(PC/n)*sum(Controles))*(n/(n*PE+PC))
