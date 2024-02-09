@@ -1,7 +1,7 @@
 def promedio(Controles):
     return sum(Controles)/len(Controles)
 
-def calculadora(Controles,PC,Segunda=False):
+def calculadora(Controles:list,PC:float,Segunda:bool=False):
     """
     Calcula la nota necesaria en el examen para pasar los ramos
     """
